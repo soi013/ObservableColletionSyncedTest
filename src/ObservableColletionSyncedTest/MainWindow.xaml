@@ -1,0 +1,33 @@
+﻿<Window
+   x:Class="ObservableColletionSyncedTest.MainWindow"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+   xmlns:local="clr-namespace:ObservableColletionSyncedTest"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   Title="MainWindow"
+   mc:Ignorable="d">
+   <Window.DataContext>
+      <local:MainWindowViewModel />
+   </Window.DataContext>
+   <UniformGrid Columns="2">
+      <StackPanel>
+         <Label HorizontalContentAlignment="Center" Content="Source" />
+         <Button Click="AddSourceButton_Click" Content="Add" />
+         <Button Click="RemoveSourceButton_Click" Content="Remove" />
+         <Button Click="ReplaceSourceButton_Click" Content="Replace" />
+         <Button Click="MoveSourceButton_Click" Content="Move" />
+         <Button Click="ClearSourceButton_Click" Content="Clear" />
+         <ListBox x:Name="sources" ItemsSource="{Binding Sources}" />
+      </StackPanel>
+      <StackPanel>
+         <Label HorizontalContentAlignment="Center" Content="Target" />
+         <Button Click="AddTargetButton_Click" Content="Add" />
+         <Button Click="RemoveTargetButton_Click" Content="Remove" />
+         <Button Click="ReplaceTargetButton_Click" Content="Replace" />
+         <Button Click="MoveTargetButton_Click" Content="Move" />
+         <Button Click="ClearTargetButton_Click" Content="Clear" />
+         <ListBox x:Name="targets" ItemsSource="{Binding Targets}" />
+      </StackPanel>
+   </UniformGrid>
+</Window>
